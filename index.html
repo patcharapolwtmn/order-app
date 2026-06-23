@@ -17,8 +17,6 @@
     --gray: #6b7280;
     --safe-top: env(safe-area-inset-top, 0px);
     --safe-bottom: env(safe-area-inset-bottom, 0px);
-    --safe-left: env(safe-area-inset-left, 0px);
-    --safe-right: env(safe-area-inset-right, 0px);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   body {
@@ -31,30 +29,23 @@
     -webkit-text-size-adjust: 100%;
   }
 
-  /* Header */
   .header {
     background: var(--blue);
     color: #fff;
-    padding: 14px 20px 14px;
+    padding: 14px 20px;
     padding-top: calc(14px + var(--safe-top));
     position: sticky;
     top: 0;
     z-index: 10;
     font-size: 22px;
     font-weight: 800;
-    display: flex;
-    align-items: center;
-    gap: 8px;
   }
 
-  /* Bottom Nav */
   .bottom-nav {
     position: fixed;
-    bottom: 0;
-    left: 50%;
+    bottom: 0; left: 50%;
     transform: translateX(-50%);
-    width: 100%;
-    max-width: 480px;
+    width: 100%; max-width: 480px;
     background: #fff;
     border-top: 1.5px solid #e5e7eb;
     display: flex;
@@ -62,22 +53,14 @@
     padding-bottom: var(--safe-bottom);
   }
   .nav-btn {
-    flex: 1;
-    padding: 10px 4px 8px;
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--gray);
-    background: none;
-    border: none;
-    border-top: 3px solid transparent;
-    cursor: pointer;
-    font-family: inherit;
-    text-align: center;
-    -webkit-touch-callout: none;
-    user-select: none;
+    flex: 1; padding: 10px 4px 8px;
+    font-size: 11px; font-weight: 500; color: var(--gray);
+    background: none; border: none; border-top: 3px solid transparent;
+    cursor: pointer; font-family: inherit; text-align: center;
+    -webkit-touch-callout: none; user-select: none;
   }
   .nav-btn.active { color: var(--blue); font-weight: 800; border-top-color: var(--blue); }
-  .nav-btn .icon { font-size: 22px; display: block; margin-bottom: 2px; }
+  .nav-btn .icon { font-size: 20px; display: block; margin-bottom: 2px; }
 
   .page { display: none; padding: 16px 16px 0; }
   .page.active { display: block; }
@@ -85,66 +68,35 @@
   /* Search row */
   .search-row { display: flex; gap: 8px; margin-bottom: 14px; }
   .search-input {
-    flex: 1;
-    font-size: 17px;
-    padding: 13px 16px;
-    border: 2px solid #d1d5db;
-    border-radius: 14px;
-    outline: none;
-    font-family: inherit;
-    background: #fff;
-    -webkit-appearance: none;
+    flex: 1; font-size: 17px; padding: 13px 16px;
+    border: 2px solid #d1d5db; border-radius: 14px;
+    outline: none; font-family: inherit; background: #fff; -webkit-appearance: none;
   }
   .search-input:focus { border-color: var(--blue2); }
   .btn-manage {
-    padding: 13px 14px;
-    font-size: 15px;
-    background: #f3f4f6;
-    color: #374151;
-    border: 2px solid #d1d5db;
-    border-radius: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    font-family: inherit;
-    white-space: nowrap;
-    -webkit-touch-callout: none;
-    user-select: none;
+    padding: 13px 14px; font-size: 15px; background: #f3f4f6; color: #374151;
+    border: 2px solid #d1d5db; border-radius: 14px; font-weight: 700;
+    cursor: pointer; font-family: inherit; white-space: nowrap;
+    -webkit-touch-callout: none; user-select: none;
   }
   .btn-add-new {
-    padding: 13px 14px;
-    font-size: 15px;
-    background: var(--blue2);
-    color: #fff;
-    border: none;
-    border-radius: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    font-family: inherit;
-    white-space: nowrap;
-    -webkit-touch-callout: none;
-    user-select: none;
+    padding: 13px 14px; font-size: 15px; background: var(--blue2); color: #fff;
+    border: none; border-radius: 14px; font-weight: 700;
+    cursor: pointer; font-family: inherit; white-space: nowrap;
+    -webkit-touch-callout: none; user-select: none;
   }
-  .btn-manage:active { opacity: 0.75; }
-  .btn-add-new:active { opacity: 0.75; }
+  .btn-manage:active, .btn-add-new:active { opacity: 0.75; }
 
   /* Product card */
   .product-card {
-    background: #fff;
-    border-radius: 16px;
-    padding: 16px;
-    margin-bottom: 12px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-    border: 2.5px solid transparent;
+    background: #fff; border-radius: 16px; padding: 16px; margin-bottom: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08); border: 2.5px solid transparent;
     transition: border-color 0.15s;
   }
   .product-card.has-qty { border-color: var(--blue2); }
   .product-header { display: flex; align-items: center; justify-content: space-between; }
   .product-name { font-size: 20px; font-weight: 700; color: #111827; }
-  .qty-badge {
-    background: #dbeafe; color: var(--blue);
-    font-size: 14px; font-weight: 700;
-    padding: 4px 12px; border-radius: 99px;
-  }
+  .qty-badge { background: #dbeafe; color: var(--blue); font-size: 14px; font-weight: 700; padding: 4px 12px; border-radius: 99px; }
   .qty-row { display: flex; align-items: center; margin-top: 14px; }
   .qty-btn {
     width: 56px; height: 56px; font-size: 28px; border-radius: 14px;
@@ -161,8 +113,7 @@
   .note-input {
     margin-top: 12px; width: 100%; font-size: 16px; padding: 10px 14px;
     border: 1.5px solid #e5e7eb; border-radius: 10px; background: #f9fafb;
-    color: #374151; outline: none; font-family: inherit;
-    -webkit-appearance: none;
+    color: #374151; outline: none; font-family: inherit; -webkit-appearance: none;
   }
   .note-input:focus { border-color: var(--blue2); background: #fff; }
 
@@ -179,26 +130,21 @@
 
   /* Manage panel */
   .manage-panel {
-    display: none;
-    background: #fff;
-    border-radius: 16px;
-    padding: 16px;
-    margin-bottom: 14px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    display: none; background: #fff; border-radius: 16px; padding: 16px;
+    margin-bottom: 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.08);
   }
   .manage-panel.open { display: block; }
   .manage-title { font-size: 17px; font-weight: 700; color: #374151; margin-bottom: 10px; }
   .manage-add-row { display: flex; gap: 8px; margin-bottom: 12px; }
   .manage-add-input {
     flex: 1; font-size: 17px; padding: 11px 14px;
-    border: 2px solid #d1d5db; border-radius: 12px; outline: none; font-family: inherit;
-    background: #fff; -webkit-appearance: none;
+    border: 2px solid #d1d5db; border-radius: 12px; outline: none;
+    font-family: inherit; background: #fff; -webkit-appearance: none;
   }
   .manage-add-input:focus { border-color: var(--blue2); }
   .btn-confirm-add {
     padding: 11px 18px; font-size: 17px; background: var(--blue2); color: #fff;
     border: none; border-radius: 12px; font-weight: 700; cursor: pointer; font-family: inherit;
-    -webkit-touch-callout: none; user-select: none;
   }
   .btn-confirm-add:active { opacity: 0.75; }
   .manage-list-item {
@@ -251,6 +197,43 @@
   .empty-icon { font-size: 52px; margin-bottom: 12px; }
   .empty-text { font-size: 20px; color: var(--gray); margin-bottom: 24px; }
 
+  /* History */
+  .history-card {
+    background: #fff; border-radius: 16px; padding: 16px; margin-bottom: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .history-head {
+    display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;
+  }
+  .history-date { font-size: 15px; font-weight: 700; color: #374151; }
+  .history-badge {
+    background: #eff6ff; color: var(--blue);
+    font-size: 13px; font-weight: 700; padding: 3px 10px; border-radius: 99px;
+  }
+  .history-items { font-size: 14px; color: #6b7280; margin-bottom: 12px; line-height: 1.7; }
+  .history-actions { display: flex; gap: 8px; }
+  .btn-reprint {
+    flex: 1; padding: 10px; font-size: 15px; font-weight: 700;
+    background: var(--blue); color: #fff; border: none; border-radius: 12px;
+    cursor: pointer; font-family: inherit;
+    -webkit-touch-callout: none; user-select: none;
+  }
+  .btn-reprint:active { opacity: 0.75; }
+  .btn-del-history {
+    padding: 10px 14px; font-size: 15px; font-weight: 700;
+    background: #fee2e2; color: var(--red); border: none; border-radius: 12px;
+    cursor: pointer; font-family: inherit;
+    -webkit-touch-callout: none; user-select: none;
+  }
+  .btn-del-history:active { opacity: 0.7; }
+  .btn-clear-all {
+    width: 100%; padding: 14px; font-size: 16px; font-weight: 700;
+    background: #fff; color: var(--red); border: 2px solid #fecaca;
+    border-radius: 16px; cursor: pointer; font-family: inherit; margin-top: 4px; margin-bottom: 8px;
+    -webkit-touch-callout: none; user-select: none;
+  }
+  .btn-clear-all:active { opacity: 0.7; }
+
   /* Toast */
   .toast {
     position: fixed; top: calc(20px + var(--safe-top)); left: 50%;
@@ -261,55 +244,10 @@
   }
   .toast.show { transform: translateX(-50%) translateY(0); }
 
-  /* ---- PRINT STYLES ---- */
-  @media print {
-    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    body { max-width: 100%; padding: 0; background: #fff; }
-    .header, .bottom-nav, .page, .toast { display: none !important; }
-    #print-area { display: block !important; }
-  }
-
-  #print-area {
-    display: none;
-    padding: 16px 20px;
-    font-family: 'Sarabun','Arial',sans-serif;
-  }
-  #print-area h1 { font-size: 18px; font-weight: 800; margin-bottom: 2px; }
-  #print-area .print-date { font-size: 12px; color: #555; margin-bottom: 14px; }
-
-  /* 2-column table layout for print */
-  .print-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-  }
-  .print-table td {
-    padding: 5px 4px;
-    border-bottom: 1px solid #e5e7eb;
-    vertical-align: middle;
-  }
-  /* left column gets right padding to separate from right column */
-  .print-table tr td:nth-child(3) { padding-right: 16px; }
-  .print-num { color: #888; width: 20px; white-space: nowrap; }
-  .print-name { font-weight: 700; }
-  .print-qty {
-    background: var(--blue); color: #fff;
-    padding: 1px 8px; border-radius: 99px;
-    font-size: 12px; font-weight: 700; white-space: nowrap;
-    text-align: center; width: 40px;
-  }
-  .print-note-cell {
-    font-size: 11px; color: #666;
-    padding: 1px 4px 5px 24px !important;
-    border-bottom: 1px solid #e5e7eb;
-  }
-  .print-total { margin-top: 12px; text-align: right; font-size: 13px; font-weight: 700; }
-
   /* Install banner */
   .install-banner {
-    background: #eff6ff; border: 1.5px solid #bfdbfe;
-    border-radius: 14px; padding: 12px 16px;
-    margin: 0 16px 14px; display: flex; gap: 12px;
+    background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 14px;
+    padding: 12px 16px; margin: 0 16px 14px; display: flex; gap: 12px;
     align-items: center; font-size: 14px; color: #1e40af;
   }
   .install-banner .ib-icon { font-size: 28px; flex-shrink: 0; }
@@ -317,6 +255,36 @@
     margin-left: auto; background: none; border: none;
     font-size: 18px; color: #93c5fd; cursor: pointer; padding: 0 4px;
   }
+
+  /* ---- PRINT ---- */
+  @media print {
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { max-width: 100%; padding: 0; background: #fff; }
+    .header, .bottom-nav, .page, .toast, .install-banner { display: none !important; }
+    #print-area { display: block !important; }
+  }
+  #print-area {
+    display: none; padding: 16px 20px;
+    font-family: 'Sarabun','Arial',sans-serif;
+  }
+  #print-area h1 { font-size: 18px; font-weight: 800; margin-bottom: 2px; }
+  #print-area .print-date { font-size: 12px; color: #555; margin-bottom: 14px; }
+  .print-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .print-table td { padding: 5px 4px; border-bottom: 1px solid #e5e7eb; vertical-align: middle; }
+  .print-table tr td:nth-child(3) { padding-right: 16px; }
+  .print-num { color: #888; width: 20px; white-space: nowrap; }
+  .print-name { font-weight: 700; }
+  .print-qty {
+    background: var(--blue); color: #fff;
+    padding: 1px 8px; border-radius: 99px;
+    font-size: 12px; font-weight: 700; white-space: nowrap; text-align: center; width: 40px;
+  }
+  .print-note-cell {
+    font-size: 11px; color: #666;
+    padding: 1px 4px 5px 24px !important;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .print-total { margin-top: 12px; text-align: right; font-size: 13px; font-weight: 700; }
 </style>
 </head>
 <body>
@@ -324,7 +292,6 @@
 <div class="toast" id="toast"></div>
 <div class="header" id="header">🛒 จดออเดอร์</div>
 
-<!-- PWA install hint (iOS only, shown once) -->
 <div class="install-banner" id="install-banner" style="display:none">
   <span class="ib-icon">📲</span>
   <span>กด <b>แชร์</b> → <b>"เพิ่มลงหน้าจอโฮม"</b> เพื่อติดตั้งเป็น App</span>
@@ -338,7 +305,6 @@
     <button class="btn-manage" onclick="toggleManage()">⚙️ แก้ไข</button>
     <button class="btn-add-new" onclick="addProductInline()">➕ เพิ่ม</button>
   </div>
-
   <div class="manage-panel" id="manage-panel">
     <div class="manage-title">⚙️ จัดการรายการสินค้า</div>
     <div class="manage-add-row">
@@ -347,7 +313,6 @@
     </div>
     <div id="manage-list"></div>
   </div>
-
   <div id="product-list"></div>
   <button class="btn-review inactive" id="btn-review" onclick="goReview()">🧐 ตรวจสอบออเดอร์</button>
 </div>
@@ -357,11 +322,16 @@
   <div id="summary-content"></div>
 </div>
 
+<!-- Page 2: ประวัติ -->
+<div class="page" id="page-2">
+  <div id="history-content"></div>
+</div>
+
 <!-- Print area -->
 <div id="print-area">
   <h1>🛒 ใบสั่งสินค้า</h1>
   <div class="print-date" id="print-date"></div>
-  <table class="print-table" id="print-table"><tbody id="print-tbody"></tbody></table>
+  <table class="print-table"><tbody id="print-tbody"></tbody></table>
   <div class="print-total" id="print-total"></div>
 </div>
 
@@ -373,17 +343,28 @@
   <button class="nav-btn" id="nav-1" onclick="goTab(1)">
     <span class="icon">✅</span>สรุปออเดอร์
   </button>
+  <button class="nav-btn" id="nav-2" onclick="goTab(2)">
+    <span class="icon">🗂</span>ประวัติ
+  </button>
 </div>
 
 <script>
 const DEFAULT_PRODUCTS = ["ข้าวผัด","ผัดกะเพรา","ต้มยำกุ้ง","แกงเขียวหวาน","ผัดไทย","ข้าวมันไก่","ส้มตำ","ลาบหมู"];
 const SK_PRODUCTS = "order_app_products_v1";
-const SK_BANNER = "order_app_banner_dismissed";
+const SK_HISTORY = "order_app_history_v1";
+const SK_BANNER  = "order_app_banner_dismissed";
 
 let products = [];
 let orders = {};
 let currentTab = 0;
 let manageOpen = false;
+
+// ---- Init ----
+function init() {
+  products = loadProducts();
+  renderProducts();
+  showInstallBannerIfNeeded();
+}
 
 function loadProducts() {
   try {
@@ -396,26 +377,44 @@ function saveProducts() {
   try { localStorage.setItem(SK_PRODUCTS, JSON.stringify(products)); } catch(e) {}
 }
 
-function init() {
-  products = loadProducts();
-  renderProducts();
-  showInstallBannerIfNeeded();
+// ---- History storage ----
+function loadHistory() {
+  try {
+    const r = localStorage.getItem(SK_HISTORY);
+    if (r) return JSON.parse(r);
+  } catch(e) {}
+  return [];
+}
+function saveHistoryEntry(ao, dateStr, total) {
+  const history = loadHistory();
+  history.unshift({ id: Date.now(), dateStr, total, items: ao });
+  // เก็บสูงสุด 60 รายการ
+  if (history.length > 60) history.splice(60);
+  try { localStorage.setItem(SK_HISTORY, JSON.stringify(history)); } catch(e) {}
+}
+function deleteHistoryEntry(id) {
+  let history = loadHistory();
+  history = history.filter(h => h.id !== id);
+  try { localStorage.setItem(SK_HISTORY, JSON.stringify(history)); } catch(e) {}
+}
+function clearAllHistory() {
+  try { localStorage.removeItem(SK_HISTORY); } catch(e) {}
 }
 
-// Show iOS install hint once
+// ---- PWA banner ----
 function showInstallBannerIfNeeded() {
   const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
   const isStandalone = window.navigator.standalone === true;
   const dismissed = localStorage.getItem(SK_BANNER);
-  if (isIOS && !isStandalone && !dismissed) {
+  if (isIOS && !isStandalone && !dismissed)
     document.getElementById('install-banner').style.display = 'flex';
-  }
 }
 function dismissBanner() {
   document.getElementById('install-banner').style.display = 'none';
   try { localStorage.setItem(SK_BANNER, '1'); } catch(e) {}
 }
 
+// ---- Toast ----
 let toastTimer;
 function showToast(msg) {
   const el = document.getElementById('toast');
@@ -425,7 +424,7 @@ function showToast(msg) {
   toastTimer = setTimeout(() => el.classList.remove('show'), 2500);
 }
 
-// Haptic feedback via AudioContext (silent) — iOS vibration workaround
+// ---- Haptic ----
 function haptic() {
   try {
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -438,7 +437,8 @@ function haptic() {
   if (navigator.vibrate) navigator.vibrate(10);
 }
 
-const TAB_TITLES = ["จดออเดอร์","สรุปออเดอร์"];
+// ---- Tabs ----
+const TAB_TITLES = ["จดออเดอร์","สรุปออเดอร์","ประวัติออเดอร์"];
 function goTab(n) {
   document.getElementById('page-' + currentTab).classList.remove('active');
   document.getElementById('nav-' + currentTab).classList.remove('active');
@@ -447,6 +447,7 @@ function goTab(n) {
   document.getElementById('nav-' + n).classList.add('active');
   document.getElementById('header').textContent = '🛒 ' + TAB_TITLES[n];
   if (n === 1) renderSummary();
+  if (n === 2) renderHistory();
 }
 
 function activeOrders() {
@@ -465,24 +466,17 @@ function toggleManage() {
   document.getElementById('manage-panel').classList.toggle('open', manageOpen);
   if (manageOpen) renderManageList();
 }
-
 function renderManageList() {
-  const el = document.getElementById('manage-list');
-  el.innerHTML = products.map(name => `
+  document.getElementById('manage-list').innerHTML = products.map(name => `
     <div class="manage-list-item">
       <span class="manage-item-name">${esc(name)}</span>
       <button class="btn-del" onclick="deleteProduct('${esc(name)}')">ลบ</button>
     </div>`).join('');
 }
-
 function addProductInline() {
-  if (!manageOpen) {
-    manageOpen = true;
-    document.getElementById('manage-panel').classList.add('open');
-  }
+  if (!manageOpen) { manageOpen = true; document.getElementById('manage-panel').classList.add('open'); }
   setTimeout(() => document.getElementById('new-product-input').focus(), 50);
 }
-
 function confirmAdd() {
   const val = document.getElementById('new-product-input').value.trim();
   if (!val) return;
@@ -491,22 +485,18 @@ function confirmAdd() {
   saveProducts();
   document.getElementById('new-product-input').value = '';
   showToast(`เพิ่ม "${val}" แล้ว`);
-  renderManageList();
-  renderProducts();
+  renderManageList(); renderProducts();
 }
-
 document.addEventListener('keydown', e => {
   if (e.key === 'Enter' && document.activeElement.id === 'new-product-input') confirmAdd();
 });
-
 function deleteProduct(name) {
   if (!confirm(`ลบ "${name}" ออกจากรายการ?`)) return;
   products = products.filter(p => p !== name);
   delete orders[name];
   saveProducts();
   showToast(`ลบ "${name}" แล้ว`);
-  renderManageList();
-  renderProducts();
+  renderManageList(); renderProducts();
 }
 
 // ---- Products page ----
@@ -514,7 +504,6 @@ function renderProducts() {
   const q = document.getElementById('search').value.toLowerCase();
   const filtered = products.filter(p => p.toLowerCase().includes(q));
   const list = document.getElementById('product-list');
-
   list.innerHTML = filtered.length === 0
     ? '<div style="text-align:center;color:#9ca3af;font-size:18px;margin-top:48px">ไม่พบสินค้า</div>'
     : filtered.map(name => {
@@ -527,31 +516,26 @@ function renderProducts() {
             ${hasQty ? `<span class="qty-badge">สั่ง ${qty}</span>` : ''}
           </div>
           <div class="qty-row">
-            <button class="qty-btn minus ${hasQty ? 'active':''}" ontouchstart="" onclick="changeQty('${esc(name)}',-1)">−</button>
-            <span class="qty-display ${hasQty ? 'has-qty':''}">${qty}</span>
+            <button class="qty-btn minus ${hasQty?'active':''}" ontouchstart="" onclick="changeQty('${esc(name)}',-1)">−</button>
+            <span class="qty-display ${hasQty?'has-qty':''}">${qty}</span>
             <button class="qty-btn plus" ontouchstart="" onclick="changeQty('${esc(name)}',1)">+</button>
           </div>
           <input class="note-input" placeholder="📝 หมายเหตุ (ถ้ามี)"
-            value="${esc(note)}"
-            oninput="setNote('${esc(name)}', this.value)" />
+            value="${esc(note)}" oninput="setNote('${esc(name)}', this.value)" />
         </div>`;
       }).join('');
-
   updateReviewBtn();
 }
-
 function changeQty(name, delta) {
   haptic();
   if (!orders[name]) orders[name] = { qty: 0, note: '' };
   orders[name].qty = Math.max(0, orders[name].qty + delta);
   renderProducts();
 }
-
 function setNote(name, val) {
   if (!orders[name]) orders[name] = { qty: 0, note: '' };
   orders[name].note = val;
 }
-
 function updateReviewBtn() {
   const btn = document.getElementById('btn-review');
   const n = activeOrders().length;
@@ -563,7 +547,6 @@ function updateReviewBtn() {
     btn.textContent = '🧐 ตรวจสอบออเดอร์';
   }
 }
-
 function goReview() {
   if (activeOrders().length === 0) return;
   goTab(1);
@@ -584,19 +567,15 @@ function renderSummary() {
   const total = ao.reduce((s,o) => s+o.qty, 0);
   const cards = ao.map(o => `
     <div class="summary-card">
-      <div class="product-header">
-        <span class="product-name">${esc(o.name)}</span>
-      </div>
+      <div class="product-header"><span class="product-name">${esc(o.name)}</span></div>
       <div class="qty-row">
         <button class="qty-btn minus active" ontouchstart="" onclick="summaryChangeQty('${esc(o.name)}',-1)">−</button>
         <span class="qty-display has-qty">${o.qty}</span>
         <button class="qty-btn plus" ontouchstart="" onclick="summaryChangeQty('${esc(o.name)}',1)">+</button>
       </div>
       <input class="note-input" placeholder="📝 หมายเหตุ (ถ้ามี)"
-        value="${esc(o.note)}"
-        oninput="setNote('${esc(o.name)}', this.value)" />
+        value="${esc(o.note)}" oninput="setNote('${esc(o.name)}', this.value)" />
     </div>`).join('');
-
   el.innerHTML = `
     <div class="summary-hint">แก้ไขจำนวนได้ก่อนส่ง</div>
     ${cards}
@@ -609,14 +588,12 @@ function renderSummary() {
     <button class="btn-back" onclick="goTab(0)">← กลับแก้ไขเพิ่มเติม</button>
   `;
 }
-
 function summaryChangeQty(name, delta) {
   haptic();
   if (!orders[name]) orders[name] = { qty:0, note:'' };
   orders[name].qty = Math.max(0, orders[name].qty + delta);
   renderSummary();
 }
-
 function resetOrders() {
   if (!confirm('ล้างออเดอร์ทั้งหมด?')) return;
   orders = {};
@@ -625,18 +602,19 @@ function resetOrders() {
   showToast('ล้างออเดอร์แล้ว ✅');
 }
 
-// ---- Export: print PDF เสมอ (iOS Safari → Share → ส่งต่อได้) ----
+// ---- Export / Print ----
 function exportOrder() {
   const ao = activeOrders();
   if (!ao.length) { showToast('ไม่มีรายการที่สั่ง'); return; }
-
   const now = new Date();
   const dateStr = now.toLocaleDateString('th-TH', { year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit' });
   const total = ao.reduce((s,o) => s+o.qty, 0);
 
+  // บันทึกประวัติก่อน print
+  saveHistoryEntry(ao, dateStr, total);
+
   buildPrintArea(ao, dateStr, total);
 
-  // reset หลัง print dialog ปิด
   window.onafterprint = () => {
     window.onafterprint = null;
     orders = {};
@@ -644,46 +622,90 @@ function exportOrder() {
     goTab(0);
     showToast('ส่งออเดอร์แล้ว ✅');
   };
-
   window.print();
 }
 
 function buildPrintArea(ao, dateStr, total) {
   document.getElementById('print-date').textContent = 'วันที่: ' + dateStr;
-
-  // แบ่งเป็น 2 คอลัมน์: ซ้าย = รายการคี่, ขวา = รายการคู่
   const half = Math.ceil(ao.length / 2);
   const left = ao.slice(0, half);
   const right = ao.slice(half);
-
   let rows = '';
   for (let i = 0; i < half; i++) {
-    const l = left[i];
-    const r = right[i];
+    const l = left[i], r = right[i];
     rows += `<tr>
-      <td class="print-num">${i + 1}.</td>
+      <td class="print-num">${i+1}.</td>
       <td class="print-name">${esc(l.name)}</td>
       <td><span class="print-qty">×${l.qty}</span></td>
-      ${r ? `<td class="print-num" style="padding-left:12px">${half + i + 1}.</td>
+      ${r ? `<td class="print-num" style="padding-left:12px">${half+i+1}.</td>
              <td class="print-name">${esc(r.name)}</td>
              <td><span class="print-qty">×${r.qty}</span></td>`
           : '<td colspan="3"></td>'}
     </tr>`;
-    // หมายเหตุ (ถ้ามี) แสดงใต้แถวนั้น
-    const hasNote = (l && l.note) || (r && r.note);
-    if (hasNote) {
+    if ((l && l.note) || (r && r.note)) {
       rows += `<tr>
         <td></td>
-        <td class="print-note-cell" colspan="2">${l.note ? '💬 ' + esc(l.note) : ''}</td>
+        <td class="print-note-cell" colspan="2">${l.note ? '💬 '+esc(l.note) : ''}</td>
         <td></td>
-        <td class="print-note-cell" colspan="2">${r && r.note ? '💬 ' + esc(r.note) : ''}</td>
+        <td class="print-note-cell" colspan="2">${r&&r.note ? '💬 '+esc(r.note) : ''}</td>
       </tr>`;
     }
   }
-
   document.getElementById('print-tbody').innerHTML = rows;
-  document.getElementById('print-total').textContent =
-    `รวม ${total} ชิ้น | ${ao.length} รายการ`;
+  document.getElementById('print-total').textContent = `รวม ${total} ชิ้น | ${ao.length} รายการ`;
+}
+
+// ---- History page ----
+function renderHistory() {
+  const history = loadHistory();
+  const el = document.getElementById('history-content');
+  if (history.length === 0) {
+    el.innerHTML = `<div class="empty-state">
+      <div class="empty-icon">🗂</div>
+      <div class="empty-text">ยังไม่มีประวัติออเดอร์</div>
+    </div>`;
+    return;
+  }
+  const cards = history.map(h => {
+    const itemLines = h.items.map(o => {
+      const note = o.note ? ` <span style="color:#9ca3af">(${esc(o.note)})</span>` : '';
+      return `${esc(o.name)} ×${o.qty}${note}`;
+    }).join(' &nbsp;·&nbsp; ');
+    return `<div class="history-card">
+      <div class="history-head">
+        <span class="history-date">📅 ${esc(h.dateStr)}</span>
+        <span class="history-badge">${h.total} ชิ้น</span>
+      </div>
+      <div class="history-items">${itemLines}</div>
+      <div class="history-actions">
+        <button class="btn-reprint" onclick="reprintHistory(${h.id})">🖨 พิมพ์ซ้ำ / ส่งอีกครั้ง</button>
+        <button class="btn-del-history" onclick="deleteHistory(${h.id})">🗑</button>
+      </div>
+    </div>`;
+  }).join('');
+  el.innerHTML = cards + `<button class="btn-clear-all" onclick="confirmClearAll()">🗑 ลบประวัติทั้งหมด</button>`;
+}
+
+function deleteHistory(id) {
+  if (!confirm('ลบรายการนี้?')) return;
+  deleteHistoryEntry(id);
+  renderHistory();
+  showToast('ลบแล้ว ✅');
+}
+
+function confirmClearAll() {
+  if (!confirm('ลบประวัติทั้งหมด?')) return;
+  clearAllHistory();
+  renderHistory();
+  showToast('ลบประวัติทั้งหมดแล้ว ✅');
+}
+
+function reprintHistory(id) {
+  const history = loadHistory();
+  const h = history.find(x => x.id === id);
+  if (!h) return;
+  buildPrintArea(h.items, h.dateStr, h.total);
+  window.print();
 }
 
 init();
